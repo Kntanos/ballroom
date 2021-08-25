@@ -1,10 +1,17 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
 
+  def book
+    @course = Course.find_by(params[:id])
+    #@course.make_booking
+    #@course.spaces -=1
+    #@course.save!
+  end
+
   # GET /courses or /courses.json
   def index
     @courses = Course.all
-  end
+   end
 
   # GET /courses/1 or /courses/1.json
   def show
