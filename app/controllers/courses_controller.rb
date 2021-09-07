@@ -2,8 +2,9 @@ class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
 
   def book
-    @course = Course.find_by(params[:id])
-    #@course.make_booking
+    @course = Course.find(params[:id])
+    #make_booking
+    @course.make_booking
     #@course.spaces -=1
     #@course.save!
   end
